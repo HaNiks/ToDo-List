@@ -12,5 +12,15 @@ const divTitle = createElement(
 )
 
 const title = createElement("h2", "", "ToDo LIST", "")
+const header = createHeader()
 
 divTitle.append(title)
+
+// ELEMENT--------------------------------------------
+function createElement(tag, className, text = "", id = "") {
+  const element = document.createElement(tag)
+  element.className = className
+  element.textContent = text
+  element.id = id
+  return element
+}
