@@ -15,6 +15,8 @@ const title = createElement("h2", "", "ToDo LIST", "")
 const header = createHeader()
 const main = createMain()
 const todoList = createTodoList(todos)
+header.addEventListener("click", (event) => onHeaderClick(event))
+main.addEventListener("click", (event) => onMainClick(event))
 
 divTitle.append(title)
 root.append(
@@ -26,6 +28,60 @@ root.append(
   todoList
 )
 
+// HANDLERS
+const onHeaderClick = (event) => {
+  switch (event.target.id) {
+    case "buttonAdd":
+      if (event.target.previousElementSibling.value !== "") {
+        const todo = {
+          id: todos.length ? todos[todos.length - 1].id + 1 : 1,
+          text: event.target.previousElementSibling.value,
+          isCompleted: false,
+          date: new Date().toLocaleDateString(),
+        }
+        event.target.previousElementSibling.value = ""
+        todos.push(todo)
+        renderTodos(todos)
+        break
+      } else {
+        document.getElementById("field").focus()
+        break
+      }
+    case "buttonDelete":
+      todos.length = 0
+      completedTasks = 0
+      renderTodos(todos)
+      break
+
+    case "buttonDeleteLast":
+      const lastElement = todos.pop()
+      if (lastElement.isCompleted === true) {
+        completedTasks--
+      }
+      renderTodos(todos)
+      break
+  }
+}
+
+const onMainClick = (event) => {
+  switch (event.target.id) {
+    case "showCompleted":
+      onComplitedClick(todos)
+      renderTodos(complited)
+      break
+
+    case "showAll":
+      createTodoList(todos)
+      renderTodos(todos)
+      break
+  }
+}
+
+const onComplitedClick = (todo) => {
+  const arr = todo.filter((event) => event.isCompleted === true)
+  complited = arr
+  return complited
+}
 // ELEMENT--------------------------------------------
 function createElement(tag, className, text = "", id = "") {
   const element = document.createElement(tag)
@@ -67,7 +123,12 @@ function createMain() {
     ""
   )
   const input = createElement("input", "form-control flex-grow-1 w-50", "", "search")
-
+  input.addEventListener("change", (e) => {
+    const arr = todos.filter((value) => value.text === e.target.value)
+    renderTodos(arr)
+    e.target.value = ""
+    return arr
+  })
   main.append(buttonShowAll, buttonShowCompleted, input)
   return main
 }
@@ -101,6 +162,33 @@ function createTodoItem(todo) {
   const buttonDelete = createElement("butoon", "btn btn-close", "", "")
   buttonDelete.id = todo.id
   const date = createElement("span", "badge bg-secondary mx-2", todo.date)
+  todoItem.addEventListener("input", () => {
+    if (input.checked) {
+      todo.isCompleted = true
+      completedTasks++
+      todoItem.className = classInputOn
+      renderTodos(todos)
+    } else {
+      todo.isCompleted = false
+      completedTasks--
+      todoItem.className = classInputOff
+      renderTodos(todos)
+    }
+  })
+  buttonDelete.addEventListener("click", () => {
+    const arr = todos.filter((event) => event.id !== todo.id)
+    if (todo.isCompleted === true) {
+      completedTasks--
+      todos = arr
+      renderTodos(todos)
+      return todos
+    } else {
+      todos = arr
+      renderTodos(todos)
+      return arr
+    }
+  })
+
   todoItem.append(input, text, date, buttonDelete)
   return todoItem
 }
