@@ -14,6 +14,7 @@ const divTitle = createElement(
 const title = createElement("h2", "", "ToDo LIST", "")
 const header = createHeader()
 const main = createMain()
+const todoList = createTodoList(todos)
 
 divTitle.append(title)
 root.append(
@@ -102,4 +103,17 @@ function createTodoItem(todo) {
   const date = createElement("span", "badge bg-secondary mx-2", todo.date)
   todoItem.append(input, text, date, buttonDelete)
   return todoItem
+}
+
+function renderTodos(arr) {
+  const todoList = createTodoList(arr)
+  root.innerHTML = ""
+  root.append(
+    divTitle,
+    header,
+    main,
+    `All: ${todos.length}`,
+    ` Completed: ${completedTasks}`,
+    todoList
+  )
 }
