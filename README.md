@@ -5,5 +5,5 @@
   <br>
   P.S. If you like the color red, this to-do list is for you
   <br>
-  <a href="https://haniks.github.io/ToDo-List/"><strong>ToDo List!</strong></a>
+  <a href="https://haniks.github.io/ToDo-List/"><strong>Click on Me</strong></a>
 </p>
