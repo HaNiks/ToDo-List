@@ -13,6 +13,7 @@ const divTitle = createElement(
 
 const title = createElement("h2", "", "ToDo LIST", "")
 const header = createHeader()
+const main = createMain()
 
 divTitle.append(title)
 
@@ -39,4 +40,25 @@ function createHeader() {
   )
   header.append(buttonDelete, buttonDeleteLast, input, buttonAdd)
   return header
+}
+
+// MAIN---------------------------------------------------
+function createMain() {
+  const buttonShowAll = createElement("button", "btn btn-outline-danger", "Show All", "showAll")
+  const buttonShowCompleted = createElement(
+    "button",
+    "btn btn-outline-danger",
+    "Show Completed",
+    "showCompleted"
+  )
+  const main = createElement(
+    "div",
+    "d-flex align-items-center justify-content-around gap-3",
+    "",
+    ""
+  )
+  const input = createElement("input", "form-control flex-grow-1 w-50", "", "search")
+
+  main.append(buttonShowAll, buttonShowCompleted, input)
+  return main
 }
