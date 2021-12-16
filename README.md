@@ -12,6 +12,7 @@
 
 *Which **technologies** were used?*
 * *JS*
+* *HTML*
 * *Bootstrap*
 * *DOM*
 * *Flex-box*
