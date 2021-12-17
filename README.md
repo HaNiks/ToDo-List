@@ -9,7 +9,7 @@
   <a href="https://haniks.github.io/ToDo-List/"><strong>Click on Me</strong></a>
 </p>
 <p align="center">
-  <img src=img/preview.jpg" alt="RED ToDo List"
+  <img src="img/preview.jpg" alt="RED ToDo List"
 </p>
   
 *Which **technologies** were used?*
