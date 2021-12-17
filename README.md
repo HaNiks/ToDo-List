@@ -8,8 +8,10 @@
   <br>
   <a href="https://haniks.github.io/ToDo-List/"><strong>Click on Me</strong></a>
 </p>
-
-![RED ToDo List](https://sun9-31.userapi.com/impg/5D_zCG2CkoZ79fSydEBLLApT1UWjcHxsU4yq0w/AVfszwM-nlw.jpg?size=541x317&quality=96&sign=6e38b177025aa2df1f657dfac8ace120&type=album)
+<p align="center">
+  <img src="https://sun9-23.userapi.com/impg/jU7BRBErS1734zAOcpeotwSX04-J1MlCNHMkCw/MLQgyekmGkw.jpg?size=538x314&quality=96&sign=5f8db27f58f7ad9a15334d6f58983d80&type=album" alt="RED ToDo List"
+</p>
+  <br>
   <br>
 *Which **technologies** were used?*
 * *JS*
