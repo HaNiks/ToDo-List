@@ -11,8 +11,7 @@
 <p align="center">
   <img src="https://sun9-23.userapi.com/impg/jU7BRBErS1734zAOcpeotwSX04-J1MlCNHMkCw/MLQgyekmGkw.jpg?size=538x314&quality=96&sign=5f8db27f58f7ad9a15334d6f58983d80&type=album" alt="RED ToDo List"
 </p>
-  <br>
-  <br>
+  
 *Which **technologies** were used?*
 * *JS*
 * *HTML*
